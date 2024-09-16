@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/35c4d4c405.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>VISITAS TECNICAS ETB</title>
+</head>
+<body>
+    <header>
+        <img src="Multimedia/areadigital2.png" width="82" height="70" alt="logo"> 
+        <h2 class="logo">ETB GESTIÓN VISITAS</h2>
+        <nav class="navegacion">
+            <a href="#">Inicio</a>
+            
+            <button class="btn">Iniciar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="fondo">
+        <span class="icono-cerrar"><i class="fa-solid fa-xmark"></i></span>
+
+        <div class="contenedor-form login">
+            <h2>Iniciar Sesión</h2>
+            <form action="#">
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" id="login-email" required>
+                    <label for="login-email">Email</label>
+                </div>
+
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" id="login-password" required>
+                    <label for="login-password">Contraseña</label>
+                </div>
+
+                <div class="recordar">
+                    <label><input type="checkbox">Recordar Sesión</label>
+                    <a href="#">¿Olvidé la contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn">Iniciar Sesión</button>
+
+                <div class="registrar">
+                    <p>¿No tienes cuenta? <a href="#" class="registrar-link">Registrarse</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="contenedor-form registrar">
+            <h2>Registrarse</h2>
+            <form action="#">
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" id="register-username" required>
+                    <label for="register-username">Nombre de Usuario</label>
+                </div>
+
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" id="register-email" required>
+                    <label for="register-email">Email</label>
+                </div>
+
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" id="register-password" required>
+                    <label for="register-password">Contraseña</label>
+                </div>
+
+                <div class="recordar">
+                    <label><input type="checkbox">Acepto los términos y condiciones</label>
+                </div>
+
+                <button type="submit" class="btn">Registrarme</button>
+
+                <div class="registrar">
+                    <p>¿Tienes una cuenta? <a href="#" class="login-link">Iniciar Sesión</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.btn').addEventListener('click', () => {
+            document.querySelector('.fondo').classList.add('active-btn');
+        });
+
+        document.querySelector('.icono-cerrar').addEventListener('click', () => {
+            document.querySelector('.fondo').classList.remove('active-btn');
+        });
+
+        document.querySelector('.registrar-link').addEventListener('click', () => {
+            document.querySelector('.fondo').classList.add('active');
+        });
+
+        document.querySelector('.login-link').addEventListener('click', () => {
+            document.querySelector('.fondo').classList.remove('active');
+        });
+    </script>
+</body>
+</html>

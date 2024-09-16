@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/35c4d4c405.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>VISITAS TECNICAS ETB</title>
+    <style>
+        .clientes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .cliente-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px; /* Aumenta el ancho del card */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .cliente-card h3 {
+            margin: 0 0 10px;
+            color: #007bff;
+        }
+        .cliente-card p {
+            margin: 5px 0;
+        }
+        .contenedor-form {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        .contenedor-form.registrar {
+            width: 400px; /* Aumenta el ancho del formulario */
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contenedor-input {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .contenedor-input input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contenedor-input label {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 14px;
+            color: #999;
+            pointer-events: none;
+            transition: 0.2s;
+        }
+        .contenedor-input input:focus + label {
+            top: -10px;
+            left: 10px;
+            font-size: 12px;
+            color: #007bff;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .recordar {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Multimedia/areadigital2.png" width="82" height="70" alt="logo"> 
+        <h2 class="logo">ETB GESTIÓN VISITAS</h2>
+        <nav class="navegacion">
+            <a href="#">Inicio</a>
+            <button class="btn">VISITAS</button>
+        </nav>
+    </header>
+
+    <div class="fondo">
+        <!-- Recuadros de clientes -->
+        <div class="clientes">
+            <div class="cliente-card">
+                <h3>Cliente 1</h3>
+                <p><strong>Nombre:</strong> Juan Pérez</p>
+                <p><strong>Dirección:</strong> Calle 123, Bogotá</p>
+                <p><strong>Teléfono:</strong> +57 312 3456789</p>
+                <p><strong>Fecha de visita:</strong> 10/09/2024</p>
+            </div>
+
+            <div class="cliente-card">
+                <h3>Cliente 2</h3>
+                <p><strong>Nombre:</strong> María Rodríguez</p>
+                <p><strong>Dirección:</strong> Avenida 45, Medellín</p>
+                <p><strong>Teléfono:</strong> +57 300 9876543</p>
+                <p><strong>Fecha de visita:</strong> 12/09/2024</p>
+            </div>
+
+            <!-- Puedes añadir más recuadros aquí -->
+        </div>
+
+        <!-- Formulario de registro -->
+        <div class="contenedor-form registrar">
+            <h2>Registrarse</h2>
+            <form action="#">
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" id="register-username" required>
+                    <label for="register-username">Nombre de Usuario</label>
+                </div>
+
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" id="register-email" required>
+                    <label for="register-email">Email</label>
+                </div>
+
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" id="register-password" required>
+                    <label for="register-password">Contraseña</label>
+                </div>
+
+                <div class="recordar">
+                    <label><input type="checkbox">Acepto los términos y condiciones</label>
+                </div>
+
+                <button type="submit" class="btn">Registrarme</button>
+
+                <div class="registrar">
+                    <p>¿Tienes una cuenta? <a href="#" class="login-link">Iniciar Sesión</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.btn').addEventListener('click', () => {
+            document.querySelector('.fondo').classList.add('active-btn');
+        });
+
+        document.querySelector('.icono-cerrar').addEventListener('click', () => {
+            document.querySelector('.fondo').classList.remove('active-btn');
+        });
+
+        document.querySelector('.registrar-link').addEventListener('click', () => {
+            document.querySelector('.fondo').classList.add('active');
+        });
+
+        document.querySelector('.login-link').addEventListener('click', () => {
+            document.querySelector('.fondo').classList.remove('active');
+        });
+    </script>
+</body>
+</html>
